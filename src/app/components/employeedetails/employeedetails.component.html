@@ -1,0 +1,43 @@
+<h2>Employee Details</h2>
+<h3>fullDate: {{today|date:'fullDate'}} </h3>
+<h3>shortDate: {{today|date:'shortDate'}} </h3>
+<h3>shortTime:{{today|date:'shortTime'}} </h3>
+<h3>short:{{today|date:'short'}} </h3>
+<h3>medium: {{today|date:'medium'}} </h3>
+<h3>long: {{today|date:'long'}} </h3>
+<h3>full: {{today|date:'full'}} </h3>
+<h3>dd-MM-yyyy: {{today|date:'dd-MM-yyyy'}} </h3>
+<h3>year: {{today|date:'yyyy'}} </h3>
+<div class="container-div" *ngFor="let emp of empDetails">
+    <div class="{{emp.isPermanent?'permanentDiv':'temporaryDiv'}} ">
+   <h3> empNumber: {{emp.empNo}}</h3>
+  <h3> name: {{emp.empName}}</h3> 
+   <h3>Pay: {{emp.Salary}}</h3> 
+  <h3>CTC: {{emp.Salary*12}}</h3>  
+   <h3> <input type="checkbox"  checked="{{emp.isPermanent?'checked':''}}" /> {{emp.isPermanent?"Permanent":"Temporary"}}</h3> 
+   <h3>{{ emp.dateOfJoining  }} </h3>
+</div>
+</div>
+
+<table border="1">
+    <tr><th>Emp No</th>
+        <th>Greetings</th>
+        <th>Emp Name</th>
+        <th>Gender</th>
+        <th>Desgination</th>
+        <th>Monthly pay</th><th>CTC</th>
+        <th>Permanent</th>
+        <th>Bonus</th>
+    </tr>
+    <tr *ngFor="let emp of empDetails">
+        <td>{{emp.empNo}} </td>
+       <td>{{emp.empName|uppercase|greet}} </td>
+        <td>{{emp.empName|salutation : emp.empGender }} </td>
+        <td>{{ emp.empGender}} </td>
+        <td>{{emp.empDesgination|uppercase}} </td>
+        <td>{{emp.Salary| currency:'INR':true}} </td>
+        <td>{{emp.Salary*12 | currency:'INR':true}} </td>
+        <td>{{emp.isPermanent?'Permanent':'Temporary'}} </td>
+        <td>{{emp.Salary|bonus : emp.empDesgination|currency: 'INR'}} </td>
+    </tr>
+</table>

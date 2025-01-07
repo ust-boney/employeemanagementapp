@@ -1,0 +1,8 @@
+.container-div{border-bottom: 1px solid;}
+/* .container-status{background-color: aquamarine;} */
+.permanentDiv{
+    background-color: greenyellow;
+}
+.temporaryDiv{
+    background-color: orange;
+}
