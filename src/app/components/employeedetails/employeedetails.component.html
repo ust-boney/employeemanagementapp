@@ -1,13 +1,5 @@
 <h2>Employee Details</h2>
-<h3>fullDate: {{today|date:'fullDate'}} </h3>
-<h3>shortDate: {{today|date:'shortDate'}} </h3>
-<h3>shortTime:{{today|date:'shortTime'}} </h3>
-<h3>short:{{today|date:'short'}} </h3>
-<h3>medium: {{today|date:'medium'}} </h3>
-<h3>long: {{today|date:'long'}} </h3>
-<h3>full: {{today|date:'full'}} </h3>
-<h3>dd-MM-yyyy: {{today|date:'dd-MM-yyyy'}} </h3>
-<h3>year: {{today|date:'yyyy'}} </h3>
+
 <div class="container-div" *ngFor="let emp of empDetails">
     <div class="{{emp.isPermanent?'permanentDiv':'temporaryDiv'}} ">
    <h3> empNumber: {{emp.empNo}}</h3>
@@ -41,3 +33,16 @@
         <td>{{emp.Salary|bonus : emp.empDesgination|currency: 'INR'}} </td>
     </tr>
 </table>
+
+
+<div>
+    <p>fullDate: {{today|date:'fullDate'}} </p>
+<p>shortDate: {{today|date:'shortDate'}} </p>
+<p>shortTime:{{today|date:'shortTime'}} </p>
+<p>short:{{today|date:'short'}} </p>
+<p>medium: {{today|date:'medium'}} </p>
+<p>long: {{today|date:'long'}} </p>
+<p>full: {{today|date:'full'}} </p>
+<p>dd-MM-yyyy: {{today|date:'dd-MM-yyyy'}} </p>
+<p>year: {{today|date:'yyyy'}} </p>
+</div>
