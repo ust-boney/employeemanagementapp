@@ -17,7 +17,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd employeemanagementapp
     npm install -g @angular/cli
     npm install
     ng build --configuration=production
